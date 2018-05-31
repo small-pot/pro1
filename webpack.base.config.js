@@ -19,7 +19,7 @@ function getHtml(){
             filename:filename+'.html',
             template:'./'+val,
             inject:true,
-            chunks:isPro?['vendor',filename]:[filename],
+            chunks:isPro?['vendor','runtime',filename]:[filename],
             minify: isPro?{
                 removeComments: true,
                 collapseWhitespace: true,
@@ -49,7 +49,6 @@ module.exports = {
         publicPath:'/'
     },
     resolve: {
-        extensions: ['.js','.json'],
         alias: {
             '@': path.resolve(__dirname, 'src'),
         }

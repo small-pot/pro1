@@ -12,6 +12,7 @@ const buildConfig=merge(config,{
         filename:'js/[name].[chunkhash].js'
     },
     optimization:{
+        runtimeChunk: "single",
         splitChunks: {
             chunks: "initial", // 必须三选一： "initial" | "all"(默认就是all) | "async"
             name:"vendor"
